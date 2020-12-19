@@ -7,6 +7,7 @@ router.register('uploadinfo', views.UploadView)
 
 urlpatterns = [
     #path('', include('languages.urls'))
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('login/', views.login_view, name='login')
     
 ]

@@ -4,7 +4,8 @@ from .models import UploadInfo
 class UploadInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = UploadInfo
-        fields = ( 'name',
+        fields = (
+                  'name',
                    'email',
                    'phone',
                    'full_address',
@@ -18,4 +19,6 @@ class UploadInfoSerializer(serializers.ModelSerializer):
                     'applying_in',
                     'field_buzz_reference',
                     'github_project_url',
+                    'cv_file',
+                    'cv_file_upload',
                   )

@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Field.Buzz</title>
+</head>
+
+<body>
+
+
+
+
+    <div class="container">
+      <div clss='jumbotron'>
+        <div class="row">
+            <div class="col-6">
+                <h2> {{ title}}</h2>
+                <form action='.' method='POST'>
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" name='user_email' id="user_email" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">The email address you given in Your email 
+                           </small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name='user_password' id="user_password" placeholder="Password">
+                        <small id="passwordHelp" class="form-text text-muted">The pasword given in Your email 
+                        </small>
+                    </div>
+
+                    <input type="submit" class='btn btn-primary' value='Submit'/>
+
+                    <!-- <button type="submit" class="btn btn-primary">Submit For Auth Token</button> -->
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>
