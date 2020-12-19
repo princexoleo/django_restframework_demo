@@ -5,14 +5,22 @@ from .models import UploadInfo
 from .serializers import UploadInfoSerializer
 import requests as req
 
+
+
 # Create your views here.
 class UploadView(viewsets.ModelViewSet):
     queryset = UploadInfo.objects.all()
     serializer_class = UploadInfoSerializer
+    
+
 
 
 def login_view(request):
-    ## 
+    """
+    This function for login/authenticate the users
+    if authenticate successfully then it permits to upload data
+    
+    """
     if request.method =='POST':
         user_email =  request.POST.get('user_email')  #"mzleon.cse@gmail.com"
         user_password =   request.POST.get('user_password')  #"o1NmBzk80"
@@ -33,3 +41,4 @@ def login_view(request):
         return render(request, 'login.html', {'title': "Login Page for Authentication"})
         
     return render(request, 'login.html', {'title': "Login Page for Authentication"})
+
